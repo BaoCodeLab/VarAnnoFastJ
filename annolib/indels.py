@@ -1,6 +1,4 @@
-#!/usr/bin/python
-## usage: anno_indel_v5-2.py.py -contg contg-dic -gene gene-dic -CDS CDS-dic -mol mol-dic -gene_ref gene_ref_dic -SNP_table SNP_file
-## author: yjbao
+
 import sys
 import os
 import pickle
