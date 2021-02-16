@@ -1,2 +1,2 @@
 # VarAnnoFastJ
-This is a program for variant annotation.
+A tool for variant annotation.
