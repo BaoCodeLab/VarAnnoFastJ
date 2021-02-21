@@ -16,7 +16,7 @@ def parse_arguments(args=None):
     snpPars.add_argument('-m','--mol',help="dictionary of molecular file parsed from parse_gpff")
     snpPars.add_argument('-s','--CDS_seq',required=True,help="dictionary of CDS sequence file parsed from parse_gpff")
     snpPars.add_argument('-t','--table',nargs='*',required=True,help="tab-delimited file containing SNPs")
-    snpPars.set_defaults(func=snp)
+    snpPars.set_defaults(func=snps)
 
     indelPars=pars_subparse.add_parser("indel",help="annotation for INDELs")
     indelPars.add_argument('-c','--contg',required=True,help="dictionary of contig file parsed from parse_gpff")
@@ -25,7 +25,7 @@ def parse_arguments(args=None):
     indelPars.add_argument('-m','--mol',action="store_false",help="dictionary of molecular file parsed from parse_gpff")
     indelPars.add_argument('-s','--CDS_seq',required=True,help="dictionary of CDS sequence file parsed from parse_gpff")
     indelPars.add_argument('-t','--table',nargs='*',required=True,help="tab-delimited file containing INDELs")
-    indelPars.set_defaults(func=indel)
+    indelPars.set_defaults(func=indels)
 
     annoPars=pars_subparse.add_parser("preprocess",help="preprocessing of annotation files")
     annoPars.add_argument('-g','--gbk',required=True,help="The gbk annotation file of the reference genome")
