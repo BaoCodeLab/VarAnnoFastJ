@@ -58,7 +58,7 @@ VarAnnoFastJ is a python tool for accurate variant annotation.
      -s CDS_SEQ, --CDS_seq CDS_SEQ            dictionary file of CDS sequences parsed from parse_gpff
      -t [TABLE ...], --table [TABLE ...]      tab-delimited files containing SNPs
 
-#### The snp command makes annotations for SNPs using the dictionary output files from the command preprocess. The snp file should be in vcf format or user-prepared tab-delimited format with each line for a single SNP. The first, second, and third column of the user-prepared SNP file should be contig ID/chromosome ID, SNP start position on contig/chromosome, SNP end position/chromosome, respectively. SNP end position is only needed for fragments of consecutive SNP. Multiple SNP files can be provided and a separated SNP annotation file with suffix .anno will be generated for each SNP input file.   
+#### The snp command makes annotations for SNPs using the dictionary output files from the command preprocess. The snp file should be in vcf format or user-prepared tab-delimited format with each line for a single SNP. The SNP file could contains as many columns as you want. But the first, second, and third column of the user-prepared SNP file should be contig ID/chromosome ID, SNP start position on contig/chromosome, and SNP end position/chromosome, respectively. SNP end position is only needed for fragments of consecutive SNP. Multiple SNP files can be provided and a separated SNP annotation file with suffix .anno will be generated for each SNP input file.   
       
 ### Annotation of Indels
 #### Usage:  VarAnnoFastJ.py indel [-h] -c CONTG -g GENE -C CDS [-m] -s CDS_SEQ -t [TABLE [TABLE ...]]
@@ -74,7 +74,7 @@ VarAnnoFastJ is a python tool for accurate variant annotation.
      -s CDS_SEQ, --CDS_seq CDS_SEQ            dictionary file of CDS sequences parsed from parse_gpff
      -t [TABLE ...], --table [TABLE ...]      tab-delimited files containing Indels
 
-#### The indel command makes annotations for Indels using the dictionary output files from the command preprocess. The indel file should be in vcf format or user-prepared tab-delimited format with each line for a single Indel. The first, second, and third column of the user-prepared Indel file should be contig ID/chromosome ID, Indel start position on contig/chromosome, Indel end position/chromosome, respectively. Indel start and end position is only needed for fragments of consecutive SNP. Multiple Indel files can be provided and a separated Indel annotation file with suffix .anno will be generated for each Indel input file.    
+#### The indel command makes annotations for Indels using the dictionary output files from the command preprocess. The indel file should be in vcf format or user-prepared tab-delimited format with each line for a single Indel. The Indel file could contains as many columns as you want. However, the first, second, and third column of the user-prepared Indel file should be contig ID/chromosome ID, Indel start position on contig/chromosome, and Indel end position/chromosome, respectively. Indel start and end position indicate the start and end position of the fragment of insertion/deletion. The users should make sure uniform alignment mode (left or right alignment) for indels of tandom repeat sequences in the alignment stage. Multiple Indel files can be provided and a separated Indel annotation file with suffix .anno will be generated for each Indel input file.    
       
       
       
