@@ -49,7 +49,15 @@ VarAnnoFastJ is a python tool for accurate variant annotation.
  #### Usage:  VarAnnoFastJ.py snp [-h] 
  
  #### {arguments}
- 
+     -h, --help            show this help message and exit
+     -c CONTG, --contg CONTG      dictionary of contig file parsed from parse_gpff
+     -g GENE, --gene GENE  dictionary of gene file parsed from parse_gpff
+     -C CDS, --CDS CDS     dictionary of CDS file parsed from parse_gpff
+     -m MOL, --mol MOL     dictionary of molecular file parsed from parse_gpff
+     -s CDS_SEQ, --CDS_seq CDS_SEQ        dictionary of CDS sequence file parsed from parse_gpff
+     -t [TABLE [TABLE ...]], --table [TABLE [TABLE ...]]       tab-delimited file containing SNPs
+      
+
       
       
       
