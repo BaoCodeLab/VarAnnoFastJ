@@ -59,7 +59,7 @@ VarAnnoFastJ is a python tool for accurate variant annotation.
      -t [TABLE ...], --table [TABLE ...]      Tab-delimited files containing SNPs
 
 #### The snp command makes annotations for SNPs using the dictionary output files from the command preprocess. The snp file should be in vcf format or user-prepared tab-delimited format with each line for a single SNP. The SNP file could contains as many columns as you want. But the first, second, and third column of the user-prepared SNP file should be contig ID/chromosome ID, SNP start position on contig/chromosome, and SNP end position/chromosome, respectively. SNP end position is only needed for fragments of consecutive SNP. Multiple SNP files can be provided and a separated SNP annotation file with suffix .anno will be generated for each SNP input file. An example of the output looks like:
-       Chromosome  Start    End   Ref  Align    MutType        GeneSymbol     GeneID                         Strand   AAchange    AAposition
+       Chromosome  Start    End   Ref  Align   MutType         GeneSymbol     GeneID                         Strand   AAchange    AAposition
        FM252032.1    157    157    C     T     CDS_synon       dnaA           SSUBM407_0001                     +                     40
        FM252032.1    204    204    G     T     CDS_nonSynon    dnaA           SSUBM407_0001                     +     Ser56Ile        56
        FM252032.1   1384   1384    C     G     inter-gene-3-5  dnaA||dnaN||   SSUBM407_0001||SSUBM407_0002||    0
@@ -81,10 +81,10 @@ VarAnnoFastJ is a python tool for accurate variant annotation.
      -t [TABLE ...], --table [TABLE ...]      Tab-delimited files containing Indels
 
 #### The indel command makes annotations for Indels using the dictionary output files from the command preprocess. The indel file should be in vcf format or user-prepared tab-delimited format with each line for a single Indel. The Indel file could contains as many columns as you want. However, the first, second, and third column of the user-prepared Indel file should be contig ID/chromosome ID, Indel start position on contig/chromosome, and Indel end position/chromosome, respectively. Indel start and end position indicate the start and end position of the fragment of insertion/deletion. The users should make sure uniform alignment mode (left or right alignment) for indels of tandom repeat sequences in the alignment stage. Multiple Indel files can be provided and a separated Indel annotation file with suffix .anno will be generated for each Indel input file. An example of the output looks like:
-     Chromosome     Start      End   Ref  Align    MutType        GeneSymbol         GeneID               Strand   ShiftPosition
-       AP53        708559   708562   AAT    ---    in-frame              mac         AP53_713                -
-       AP53        708569   708572   ---    TTA    in-frame-Stp          mac         AP53_713                -
-       AP53        743775   743775    T      -     frame-shift          amiC         AP53_750                +          86
+     Chromosome     Start      End   Ref   Align   MutType           GeneSymbol      GeneID               Strand   ShiftPosition
+       AP53        708559   708562   AAT    ---    in-frame          mac             AP53_713                -
+       AP53        708569   708572   ---    TTA    in-frame-Stp      mac             AP53_713                -
+       AP53        743775   743775    T      -     frame-shift       amiC            AP53_750                +          86
        AP53        755767   755768    --     CT    inter-gene-3-5    parE||parC||    AP53_756||AP53_757||    0
  ####  Similar to the annotation file of SNPs, the fourth and fifth column are Reference allele and Aligned allele, respectively. The sixth column "MutType" refers to the mutation type, including in-frame,  in-frame-Stp, frame-shift, inter-gene-3-5, inter-gene-5-3, inter-gene-3-3, inter-gene-5-5, UTR, intron-splice-5, intron-splice-3, intron, and pseudo-gene|ncRNA. The number "5" and "3" indicate the genic region of the mutation relative to the upstream and downstream gene. For example, "inter-gene-3-5" means the mutation is located between the 3'-end of the upstream gene and 5'-end of the downstream gene, "intron-splice-5" means the mutation is located in the splicing sites of the 5'-end of a gene.   
        
