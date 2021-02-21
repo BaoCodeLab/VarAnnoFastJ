@@ -34,7 +34,7 @@ VarAnnoFastJ is a python tool for accurate variant annotation.
     -r REF, --ref REF                   The reference genome file of fasta format.
     -p PREFIX, --prefix PREFIX          The prefix of dictionary output files.
    
-#### The preprocess command processes the gbk annotation file of the reference genome and generates three sets of output files for variant annotation. The output includes the tab-delimited file (general tab file format), the protein sequences encoded by the reference genome, and a series of python dictionary files representing distinct attributes of the genome annotation. An example of the dictionary output files is as following:
+#### The preprocess command processes the gbk annotation file of the reference genome and generates three sets of output files. The output includes the tab-delimited file (general tab file format), the protein sequences encoded by the reference genome, and a series of python dictionary files representing distinct attributes of the genome annotation. The dictionary files will be used as input for variant annotation. An example of the dictionary output files is as following:
     gtff_parse.contg.dic         The contigs in the reference genome.
     gtff_parse.gene.dic          All genes encoded by the reference genome.
     gtff_parse.mol.dic           The molecular types of each gene encoded by the reference genome (i.e., gene, CDS, rRNA, tRNA).
@@ -44,8 +44,12 @@ VarAnnoFastJ is a python tool for accurate variant annotation.
     gtff_parse.pseudoSeq.dic     The sequences of pseudogenes.
     gtff_parse.RNA.dic           The RNAs of the reference genome (i.e., rRNA, tRNA).
     gtff_parse.rnaSeq.dic        The sequences of RNAs.
+    
+ ### Annotation of SNPs
+ #### Usage:  VarAnnoFastJ.py snp [-h] 
  
-      
+ #### {arguments}
+ 
       
       
       
