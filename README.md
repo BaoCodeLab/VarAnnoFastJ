@@ -47,7 +47,7 @@ VarAnnoFastJ is a python tool for accurate variant annotation.
     
  ### Annotation of SNPs
  #### Usage:    VarAnnoFastJ.py snp [-h] -c CONTG -g GENE -C CDS [-m MOL] -s CDS_SEQ -t [TABLE [TABLE ...]]
- #### Example:  VarAnnoFastJ.py snp -c gtff_parse.contg.dic -g gtff_parse.gene.dic -C gtff_parse.CDS.dic -m gtff_parse.mol.dic -s gtff_parse.CDSseq.dic -t chr1.snp.table chr2.snp.table chr3.snp.table
+ #### Example:  VarAnnoFastJ.py snp -c gtff_parse.contg.dic -g gtff_parse.gene.dic -C gtff_parse.CDS.dic -m gtff_parse.mol.dic -s gtff_parse.CDSseq.dic -t chr1.snp.table       chr2.snp.table chr3.snp.table
  
  #### {arguments}
      -h, --help            show this help message and exit
@@ -58,7 +58,7 @@ VarAnnoFastJ is a python tool for accurate variant annotation.
      -s CDS_SEQ, --CDS_seq CDS_SEQ        dictionary of CDS sequence file parsed from parse_gpff
      -t [TABLE [TABLE ...]], --table [TABLE [TABLE ...]]       tab-delimited file containing SNPs
 
-
+#### The snp command makes annotations for SNPs using the dictionary output files from the command preprocess. The snp file should be in vcf format or user-prepared tab-delimited format with each line for a single SNP. The first, second, and third column of the user-prepared SNP file should be contig ID/chromosome ID, SNP start position on contig/chromosome, SNP end position/chromosome, respectively. SNP end position is only needed for fragments of consecutive SNP.   
       
 
       
