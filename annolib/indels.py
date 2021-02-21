@@ -424,7 +424,7 @@ def anno_indel(snp_table):
 
 
 
-def indel(args):
+def indels(args):
 
     if args.contg:
         contg_filefile = args.contg
