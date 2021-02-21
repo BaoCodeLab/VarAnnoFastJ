@@ -36,7 +36,7 @@ VarAnnoFastJ is a python tool for accurate variant annotation.
    
 #### The preprocess command processes the gbk annotation file of the reference genome and generates three sets of output files. The output includes the tab-delimited file (general tab file format), the protein sequences encoded by the reference genome, and a series of python dictionary files representing distinct attributes of the genome annotation. The dictionary files will be used as input for variant annotation. An example of the dictionary output files is as following:
     gtff_parse.contg.dic         The contigs in the reference genome.
-    gtff_parse.gene.dic          All genes encoded by the reference genome.
+    gtff_parse.gene.dic              All genes encoded by the reference genome.
     gtff_parse.mol.dic           The molecular types of each gene encoded by the reference genome (i.e., gene, CDS, rRNA, tRNA).
     gtff_parse.CDS.dic           The coding genes encoded by the reference genome.
     gtff_parse.CDSseq.dic        The sequence of coding genes. 
@@ -46,7 +46,8 @@ VarAnnoFastJ is a python tool for accurate variant annotation.
     gtff_parse.rnaSeq.dic        The sequences of RNAs.
     
  ### Annotation of SNPs
- #### Usage:  VarAnnoFastJ.py snp [-h] 
+ #### Usage:    VarAnnoFastJ.py snp [-h] -c CONTG -g GENE -C CDS [-m MOL] -s CDS_SEQ -t [TABLE [TABLE ...]]
+ #### Example:  VarAnnoFastJ.py snp -c gtff_parse.contg.dic -g gtff_parse.gene.dic -C gtff_parse.CDS.dic -m gtff_parse.mol.dic -s gtff_parse.CDSseq.dic -t chr1.snp.table chr2.snp.table chr3.snp.table
  
  #### {arguments}
      -h, --help            show this help message and exit
@@ -56,6 +57,8 @@ VarAnnoFastJ is a python tool for accurate variant annotation.
      -m MOL, --mol MOL     dictionary of molecular file parsed from parse_gpff
      -s CDS_SEQ, --CDS_seq CDS_SEQ        dictionary of CDS sequence file parsed from parse_gpff
      -t [TABLE [TABLE ...]], --table [TABLE [TABLE ...]]       tab-delimited file containing SNPs
+
+
       
 
       
