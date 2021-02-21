@@ -22,7 +22,7 @@ VarAnnoFastJ is a python tool for accurate variant annotation.
     snp                 Annotation of SNPs.
     indel               Annotation of Indels.
 
-### Preprocessing of gene annotation files
+### Preprocessing of reference genome annotation files
 #### Usage:  VarAnnoFastJ.py preprocess [-h] -g GBK -o1 GTFF -o2 OUTSEQ -t TAX -r REF -p prefix
 
 #### {arguments}
@@ -50,18 +50,31 @@ VarAnnoFastJ is a python tool for accurate variant annotation.
  #### Example:  VarAnnoFastJ.py snp -c gtff_parse.contg.dic -g gtff_parse.gene.dic -C gtff_parse.CDS.dic -m gtff_parse.mol.dic -s gtff_parse.CDSseq.dic -t chr1.snp.table       chr2.snp.table chr3.snp.table
  
  #### {arguments}
-     -h, --help            show this help message and exit
-     -c CONTG, --contg CONTG      dictionary of contig file parsed from parse_gpff
-     -g GENE, --gene GENE  dictionary of gene file parsed from parse_gpff
-     -C CDS, --CDS CDS     dictionary of CDS file parsed from parse_gpff
-     -m MOL, --mol MOL     dictionary of molecular file parsed from parse_gpff
-     -s CDS_SEQ, --CDS_seq CDS_SEQ        dictionary of CDS sequence file parsed from parse_gpff
-     -t [TABLE [TABLE ...]], --table [TABLE [TABLE ...]]       tab-delimited file containing SNPs
+     -h, --help                               show this help message and exit
+     -c CONTG, --contg CONTG                  dictionary file of contigs parsed from parse_gpff
+     -g GENE, --gene GENE                     dictionary file of genes parsed from parse_gpff
+     -C CDS, --CDS CDS                        dictionary file of CDS parsed from parse_gpff
+     -m MOL, --mol MOL                        dictionary file of molecular type parsed from parse_gpff
+     -s CDS_SEQ, --CDS_seq CDS_SEQ            dictionary file of CDS sequences parsed from parse_gpff
+     -t [TABLE ...], --table [TABLE ...]      tab-delimited files containing SNPs
 
-#### The snp command makes annotations for SNPs using the dictionary output files from the command preprocess. The snp file should be in vcf format or user-prepared tab-delimited format with each line for a single SNP. The first, second, and third column of the user-prepared SNP file should be contig ID/chromosome ID, SNP start position on contig/chromosome, SNP end position/chromosome, respectively. SNP end position is only needed for fragments of consecutive SNP.   
+#### The snp command makes annotations for SNPs using the dictionary output files from the command preprocess. The snp file should be in vcf format or user-prepared tab-delimited format with each line for a single SNP. The first, second, and third column of the user-prepared SNP file should be contig ID/chromosome ID, SNP start position on contig/chromosome, SNP end position/chromosome, respectively. SNP end position is only needed for fragments of consecutive SNP. Multiple SNP files can be provided and a separated SNP annotation file with suffix .anno will be generated for each SNP input file.   
       
+### Annotation of Indels
+#### Usage:  VarAnnoFastJ.py indel [-h] -c CONTG -g GENE -C CDS [-m] -s CDS_SEQ -t [TABLE [TABLE ...]]
+#### Example:  VarAnnoFastJ.py indel -c gtff_parse.contg.dic -g gtff_parse.gene.dic -C gtff_parse.CDS.dic -m gtff_parse.mol.dic -s gtff_parse.CDSseq.dic -t chr1.indel.table chr2.indel.table chr3.indel.table
 
-      
+
+ #### {arguments}
+     -h, --help                               show this help message and exit
+     -c CONTG, --contg CONTG                  dictionary file of contigs parsed from parse_gpff
+     -g GENE, --gene GENE                     dictionary file of genes parsed from parse_gpff
+     -C CDS, --CDS CDS                        dictionary file of CDS parsed from parse_gpff
+     -m MOL, --mol MOL                        dictionary file of molecular type parsed from parse_gpff
+     -s CDS_SEQ, --CDS_seq CDS_SEQ            dictionary file of CDS sequences parsed from parse_gpff
+     -t [TABLE ...], --table [TABLE ...]      tab-delimited files containing Indels
+
+#### The indel command makes annotations for Indels using the dictionary output files from the command preprocess. The indel file should be in vcf format or user-prepared tab-delimited format with each line for a single Indel. The first, second, and third column of the user-prepared Indel file should be contig ID/chromosome ID, Indel start position on contig/chromosome, Indel end position/chromosome, respectively. Indel start and end position is only needed for fragments of consecutive SNP. Multiple Indel files can be provided and a separated Indel annotation file with suffix .anno will be generated for each Indel input file.    
       
       
       
