@@ -487,7 +487,7 @@ def anno_snp(snp_table):
 
 
 
-def snp(args):
+def snps(args):
 
     if args.contg:
         contg_filefile = args.contg
