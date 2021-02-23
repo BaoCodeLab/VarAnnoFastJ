@@ -1,4 +1,3 @@
-## fixing the bug for annotating multiple consecutive SNPs
 ## author: yjbao
 import pickle
 import logging
