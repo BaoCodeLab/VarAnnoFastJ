@@ -6,6 +6,7 @@ VarAnnoFastJ is a python tool for accurate variant annotation.
   * numpy >= 1.17.3
   * pandas >= 1.1.4
   * gffutils >= 0.10.1
+  * PyVCF >= 0.6.8
    
 ####
     git clone https://github.com/BaoCodeLab/VarAnnoFastJ
