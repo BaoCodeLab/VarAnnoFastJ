@@ -11,6 +11,7 @@ setup(
     packages=find_packages(),
     python_requires=">=3.7",
     install_requires=["numpy >= 1.17.3","pandas >= 1.1.4","gffutils >= 0.10.1"]
+)
 
 
 
