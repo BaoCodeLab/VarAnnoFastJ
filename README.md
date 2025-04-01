@@ -89,7 +89,8 @@ VarAnnoFastJ is a python tool for accurate variant annotation.
        AP53        755767   755768    --     CT    inter-gene-3-5    parE||parC||    AP53_756||AP53_757||    0
  ####  Similar to the annotation file of SNPs, the fourth and fifth column are Reference allele and Aligned allele, respectively. The sixth column "MutType" refers to the mutation type, including in-frame,  in-frame-Stp, frame-shift, inter-gene-3-5, inter-gene-5-3, inter-gene-3-3, inter-gene-5-5, UTR, intron-splice-5, intron-splice-3, intron, and pseudo-gene|ncRNA. The number "5" and "3" indicate the genic region of the mutation relative to the upstream and downstream gene. For example, "inter-gene-3-5" means the mutation is located between the 3'-end of the upstream gene and 5'-end of the downstream gene, "intron-splice-5" means the mutation is located in the splicing sites of the 5'-end of a gene.   
        
-       
+## Related publication
+Ma S, Bao YJ, Kwan PS, Chan YP, Tong CM, Fu L, Zhang N, Tong AHY, Qin YR, Tsao SW, Chan KW, Lok S, and Guan XY. Identification of PTK6, via RNA sequencing analysis, as a suppressor of esophageal squamous cell carcinoma. Gastroenterology 2012, 143(3):675-686.
        
        
        
